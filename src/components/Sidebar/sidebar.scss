@@ -1,0 +1,219 @@
+.sidebar {
+
+  background-color: white;
+  border-radius: 20px;
+  width: 60px;
+  height: 92vh;
+  position: fixed;
+  z-index: 100;
+  overflow: hidden;
+  left: 1vw;
+  top: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.5s ease-in-out;
+
+  >div:first-child {
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    >span {
+      transition: all 0.5s ease-in-out;
+      align-self: center;
+      visibility: hidden;
+      position: relative;
+      margin-left: 20px;
+      margin-right: 40px;
+      font-size: 20px;
+      color: orange;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+
+    >img {
+      margin-left: 10px;
+      height: 40px;
+      width: 40px;
+    }
+
+    button {
+      border: 0px;
+      background-color: blue($color: #bbbbbb);
+      border-radius: 100%;
+      transition: all 0.5s ease-in-out;
+      height: 19.2px;
+      z-index: 1000;
+      width: auto;
+      position: fixed;
+      margin-left: 70px;
+      align-self: center;
+    }
+
+  }
+
+  >div:nth-child(2) {
+    width: 100%;
+    margin-bottom: 20vh;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+
+    >div {
+      width: 100%;
+      display: flex;
+      border-radius: 8px;
+      height: 30px;
+
+      >span {
+        visibility: hidden;
+        align-self: center;
+        margin-left: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      >svg {
+        transition: all 0.5s ease-in-out;
+        align-self: center;
+        margin-left: 21px;
+      }
+    }
+
+    >div:hover {
+      font-weight: bold;
+      background-color: bisque;
+      cursor: pointer;
+    }
+
+    >div:focus {
+      background-color: orange;
+    }
+  }
+
+  >div:nth-child(3) {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    >div {
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      height: 30px;
+
+      >span {
+        visibility: hidden;
+        align-self: center;
+        margin-left: 30px;
+        transition: all 0.5s ease-in-out;
+        margin-left: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      >svg {
+        margin-left: 21px;
+
+      }
+    }
+
+    >div:hover {
+      font-weight: bold;
+      background-color: bisque;
+      cursor: pointer;
+    }
+
+    >div:focus {
+      background-color: orange;
+    }
+  }
+}
+
+.sidebar.opened {
+  width: 200px;
+  transition: width 0.5s ease-in-out;
+
+  >div:first-child {
+    display: flex;
+    align-items: center;
+
+    span {
+      transition: all 0.5s ease-in-out;
+
+      visibility: visible;
+    }
+
+    button {
+      transition: all 0.5s ease-in-out;
+      margin-left: 190px;
+      border-radius: 100%;
+    }
+  }
+
+  >div:nth-child(2) {
+    >div {
+      display: flex;
+      align-items: center;
+      height: 30px;
+
+      >span {
+        visibility: visible;
+        transition: all 0.5s ease-in-out;
+      }
+
+      svg {
+        margin-left: 30px;
+      }
+
+      >div:hover {
+        font-weight: bold;
+        background-color: rgb(207, 207, 207);
+        cursor: pointer;
+      }
+    }
+  }
+
+  >div:nth-child(3) {
+    >div {
+      >span {
+        visibility: visible;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+.sidebar:not(.opened) {
+  >div:nth-child(2) {
+    >div:hover {
+      >span {
+        visibility: visible;
+        position: fixed;
+        margin-left: 60px;
+        background-color: orange;
+        border-radius: 8px;
+        color: white;
+      }
+    }
+  }
+
+  >div:nth-child(3) {
+    >div:hover {
+      >span {
+        visibility: visible;
+        position: fixed;
+        margin-left: 60px;
+        background-color: orange;
+        border-radius: 8px;
+        color: white;
+      }
+    }
+  }
+}
